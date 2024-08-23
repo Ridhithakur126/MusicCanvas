@@ -1,0 +1,786 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&display=swap');
+
+:root{
+  --main-color:#022988;
+  --primary-color: #ef5068;
+  --black:#13131a;
+  --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+*{
+  font-family: 'Playfair Display', sans-serif;
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  outline: none; border: none;
+  text-transform: capitalize;
+  text-decoration: none;
+  list-style: none;
+  transition: all .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+
+  html::-webkit-scollbar{
+    width: .6rem;
+  }
+  
+  html ::-webkit-scollbar-track{
+    background: black;
+  }
+  html::-webkit-scrollbar-thumb{
+    background: var(--primary--color);
+  }
+  section{
+    padding: 3rem 7%;
+  }
+
+  .btn{
+    margin-top: 1rem;
+    background: var(--primary--color);
+    color: #fff;
+    display: inline-block;
+    border-radius: 5rem;
+    box-shadow: var(--box-shadow);
+    padding: 1rem 4rem;
+    font-size: 1.7rem;
+    position: relative;
+    z-index:0;
+    overflow:hidden;
+
+  }
+
+.btn::before,
+.btn::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background: #bd394c;
+  z-index: -1;
+  transition: .3s linear;
+}
+
+.btn::before {
+    left: 0;
+}
+
+
+  .btn::after{
+    right:0;
+  }
+
+  .btn.hov::before,
+  .btn.hov::after{
+    width:100%;
+  }
+
+/*header */
+
+
+ 
+
+  .header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 9%;
+    background: #f0f4ff;
+    box-shadow: var(--box-shadow);
+  }
+  
+
+  .header .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--black);
+  }
+
+  .header .logo i{
+    color: var(--main-color);
+    padding-right: .5rem;
+  }
+
+
+  .header .navbar a{
+    font-size: 2rem;
+    color: var(--black);
+    margin-left: 2rem;
+  }
+
+  .header .navbar a:hover{
+    color : var(--primary-color);
+  }
+
+  #menu{
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: var(--black);
+    display: none;
+
+  }
+  /* end  */
+
+  /*home*/
+
+
+
+  .home .btn {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color); /* If the button has a border, it will also be red */
+    color: white; /* Ensures the text color contrasts well with the red background */
+  }
+  
+  .home .btn:hover {
+    background-color: darkred; /* Optional: Darkens the color on hover */
+    border-color: darkred;
+  }
+
+  .home{
+    display: flex;
+    align-items: center;
+    background:url('/images/home.jpg') no-repeat;
+    min-height:110vh;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .home content{
+    max-width: 60rem;
+  }
+
+  .home .content h3{
+    font-size: 6rem;
+    color: white;
+    line-height: 1.2;
+    font-weight:600;
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+    padding-bottom: 2rem;
+  }
+
+  /*end/
+
+  /*about*/
+
+  .about .row{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 3rem;
+  }
+.about .row .content {
+    flex: 1 1 40rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers the content vertically */
+    text-align: center; /* Centers the text horizontally */
+}
+
+  
+  .about .row .content h3{
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    padding: 1rem 0;
+  }
+  
+  .about .row .content p{
+    font-size: 1.4rem;
+    color: var(--black);
+    padding: 1rem 0;
+    line-height: 2;
+  }
+  
+  .about ul li{
+    font-size: 1.7rem;
+    color: var(--main-color);
+    padding-top: 1.5rem;
+  }
+  
+  .about ul li i{
+    font-size: 2rem;
+    color: var(--primary-color);
+    padding-right: 1rem;
+  }
+  
+  .about .row .content .btn{
+    max-width: 200px; /* Set a maximum width for the button */
+    padding: 1rem 2rem; /* Adjust padding for a balanced size */
+    margin: 3rem auto; /* Center the button horizontally */
+    display: block;
+    background: var(--primary-color);
+    color: white;
+    border: 2px solid transparent;
+  }
+  
+  .about .row .image{
+    flex: 1 1 30rem;
+    margin-left: 0; /* Ensure there's no left margin */
+    padding-left: 0; /* Remove any padding on the left */
+  }
+  
+  
+  .about .row .image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-left: 0; /* Ensure the image starts exactly at the left border */
+    padding-left: 0; /* Ensure no padding on the left side */
+}
+  .about .btn {
+    background: var(--primary-color); /* Change the background to white (or any color you prefer) */
+    color: white; /* Set the text color to black */
+    border: 2px solid ; /* Optional: add a border to make it stand out */
+}
+
+.about .btn:hover {
+    background: #000; /* Change background to black on hover */
+    color: var(#fff); /* Change text color to white on hover */
+}
+
+.about .heading {
+    text-align: center;
+    font-size: 3rem; /* Adjust the font size if needed */
+    margin-bottom: 2rem; /* Add space below the heading */
+    color: #000; /* Set the text color to black */
+}
+
+
+
+
+ /* end */
+
+
+/* artist */
+
+.artist .heading {
+  text-align: center;
+  font-size: 3rem; /* Increase the font size */
+  margin-bottom: 2rem; /* Add space below the heading */
+  color: #333; /* Optional: Adjust the color if needed */
+}
+
+
+
+.artist {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #f0f4ff;
+}
+
+.box-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.box {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.box .image {
+  width: 80%; /* Shrink the image width */
+  max-height: 700px; /* Adjust height */
+  margin: 0 auto; /* Center the image */
+  overflow: hidden; /* Hide overflow */
+}
+
+.box .image img {
+  width: 100%;
+  height: 70%; /* Maintain aspect ratio */
+  display: block;
+  object-fit: cover; /* Ensure the image is contained within the container */
+}
+
+.next, .prev {
+  position: absolute;
+  top: 50%;
+  width: 50px; /* Adjust size */
+  height: 50px; /* Adjust size */
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+  border: none;
+}
+
+.next {
+  right: 0;
+}
+
+.prev {
+  left: 0;
+}
+
+.next:hover, .prev:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+
+
+.artist .box .image {
+  position: relative; /* Ensure the image container is the reference for absolute positioning */
+}
+
+
+.artist .box .image .share {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 0;  /* Align to the left */
+  transform: translate(-100%, -50%); /* Move completely off-screen initially */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0; /* Hidden by default */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.artist .box .image:hover .share {
+  transform: translate(0, -50%); /* Bring icons into view on hover */
+  opacity: 1;
+}
+
+.artist .box .image .share a {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 20px;
+  color: white;
+  background: var(--primary-color);
+  border-radius: 50%;
+  text-align: center;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.artist .box .image .share a:hover {
+  background: white;
+  color: var(--main-color);
+}
+
+
+
+.artist .box .content {
+  width: 100%;
+  text-align: center;
+  padding: 0 20px; /* Center the content with some padding */
+}
+
+.artist .box .content h5 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.artist .box .content h3 {
+  font-size: 2rem;
+  color: var(--black);
+}
+
+
+/*end*/
+/*shop*/
+
+
+.shop .heading {
+  text-align: center;
+  font-size: 3rem; /* Increase the font size */
+  margin-bottom: 2rem; /* Add space below the heading */
+  color: #333; /* Optional: Adjust the color if needed */
+}
+
+.shop .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px; /* Adjust spacing between items */
+  padding: 20px;
+}
+
+.shop .box {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.shop .box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.shop .box .image {
+  width: 100%;
+  height: 150px; /* Adjust height to make the images smaller */
+  overflow: hidden;
+  position: relative;
+}
+
+.shop .box .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the entire area */
+}
+
+.shop .box .image .share {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.shop .box .image:hover .share {
+  opacity: 1;
+}
+
+.shop .box .image .share a {
+  width: 30px;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.shop .box .image .share a:hover {
+  background: white;
+  color: var(--main-color);
+}
+
+.shop .box .content {
+  padding: 15px;
+  text-align: center;
+}
+
+.shop .box .content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: var(--primary-color);
+}
+
+.shop .box .content h5 {
+  font-size: 1rem;
+  color: var(--black);
+}
+
+
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: #aaa;
+  font-size: 30px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*end*/
+/*gallery*/
+
+.gallery .heading {
+  text-align: center;
+  font-size: 3rem; /* Increase the font size */
+  margin-bottom: 2rem; /* Add space below the heading */
+  color: #333; /* Optional: Adjust the color if needed */
+}
+
+
+
+.gallery{
+  background: white;
+
+}
+
+.gallery .controls{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.gallery .controls .button{
+  height: 4rem;
+  width: 16rem;
+  background: white ;
+  color:var(--primary--color);
+  font-size:2rem;
+  line-height: 4rem;
+  cursor: pointer;
+  margin: 1rem ;
+  box-shadow:var(--box-shadow);
+  text-align: center;
+}
+
+
+.gallery .controls .button.active{
+  background: var(--primary-color);
+  color:white;
+}
+
+
+
+.gallery .box-container-gallery .image img {
+  width: 270px;  /* Adjust the width to make images smaller */
+  height: auto;  /* Maintain the aspect ratio */
+  margin: 5px;
+  cursor: pointer;  /* Optional: Adds space between images */
+  transition: transform 0.3s ease;
+} 
+
+
+
+
+
+.gallery .box-container-gallery {
+  display: flex;
+  flex-wrap: wrap;  /* Prevents images from wrapping to the next line */
+  overflow-x: auto;   /* Enables horizontal scrolling */
+  gap: 10px;  /* Adds space between the images */
+  padding-bottom: 10px;  /* Optional: Adds some padding at the bottom */
+}
+
+
+.gallery .box-container-gallery .image img:hover {
+  transform: scale(1.7);  /* Image grows to 120% of its size on hover */
+  z-index: 10;  /* Ensures it stays on top of other images when scaled */
+}
+
+
+
+/*end*/
+/* blog*/
+
+.blog .heading {
+  text-align: center;
+  font-size: 3rem; /* Increase the font size */
+  margin-bottom: 2rem; /* Add space below the heading */
+  color: #333; /* Optional: Adjust the color if needed */
+}
+
+
+
+.blog .box-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+}
+
+.blog .box-container .box{
+  box-shadow: var(--box-shadow);
+}
+
+.blog .box-container .box .image{
+  height: 30rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.blog .box-container .box .image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog .box-container .box:hover .image img{
+  transform: scale(1.2);
+}
+
+.blog .box-container .box .content{
+  padding: 3rem 3.5rem;
+}
+
+.blog .box-container .box .content h3{
+  font-size: 2.2rem;
+  color: var(--black);
+}
+
+.blog .box-container .box .content .icons{
+  padding-top: 1.7rem;
+}
+
+.blog .box-container .box .content .icons a{
+  font-size: 1.4rem;
+  color: #777;
+}
+
+.blog .box-container .box .content .icons a:hover{
+  color: var(--primary-color);
+}
+
+.blog .box-container .box .content .icons a i{
+  color: var(--primary-color);
+  padding-right: .5rem;
+}
+
+.blog .box-container .box .content p{
+  font-size: 1.4rem;
+  color: var(--black);
+  line-height: 2;
+  padding: 1rem 0;
+}
+.blog .btn {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color); /* If the button has a border, it will also be red */
+  color: white; /* Ensures the text color contrasts well with the red background */
+}
+
+.blog .btn:hover {
+  background-color: darkred; /* Optional: Darkens the color on hover */
+  border-color: darkred;
+}
+/* contact */
+.contact .heading {
+  text-align: center;
+  font-size: 3rem; /* Increase the font size */
+  margin-bottom: 2rem; /* Add space below the heading */
+  color: #333; /* Optional: Adjust the color if needed */
+}
+
+
+
+
+.contact .row{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.contact .row .image{
+  flex: 1 1 30rem;
+}
+
+.contact .row .image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact .row form{
+  flex: 1 1 50rem;
+  padding: 5rem;
+}
+
+.contact .row form .inputBox{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact .row form .inputBox input,
+.contact .row form textarea{
+  padding: 1rem;
+  margin: 1rem 0;
+  font-size: 1.7rem;
+  color: #333;
+  text-transform: none;
+  border: .1rem solid rgba(0,0,0,.3);
+  border-radius: .5rem;
+  width: 49%;
+}
+
+.contact .row form textarea{
+  width: 100%;
+  height: 15rem;
+  resize: none;
+}
+
+.contact .btn {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color); /* If the button has a border, it will also be red */
+  color: white; /* Ensures the text color contrasts well with the red background */
+}
+
+.contact .btn:hover {
+  background-color: darkred; /* Optional: Darkens the color on hover */
+  border-color: darkred;
+}
+
+/*subscribe*/
+
+.subscribe{
+  background: #f0f4ff;
+}
+
+.subscribe .row{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3rem;
+ 
+}
+
+.subscribe .row .content{
+  flex: 1 1 30rem;
+
+}
+
+.subscribe .row .content p{
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.subscribe .row .inputBox{
+  flex: 1 1 50rem;
+}
+
+.subscribe .row .inputBox .email{
+  padding: 1.2rem;
+  width: 60%;
+  border-radius: 5rem;
+  font-size: 1.4rem;
+  background: none;
+  color: var(--black);
+  text-transform: none;
+  border: .1rem solid var(--primary-color);
+}
+
+
+
+.subscribe .btn:hover {
+  background-color: darkred; /* Optional: Darkens the color on hover */
+  border-color: darkred;
+}
+/* contact */
+.subscribe .btn{
+  text-align: center;
+  font-size: 3rem; /* Increase the font size */
+  margin-bottom: 2rem; /* Add space below the heading */
+  color: #f5f1f1; /* Optional: Adjust the color if needed */
+  margin-left: 2rem;
+  cursor: pointer;
+  background: #ef5068;
+}
+
+
+/*end*/
+
+
+
+
