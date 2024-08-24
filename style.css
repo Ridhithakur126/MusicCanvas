@@ -147,7 +147,8 @@ html{
   .home{
     display: flex;
     align-items: center;
-    background:url('../images/home.jpg') no-repeat;
+    background:url('https://Ridhithakur126.github.io/MusicCanvas/images/home.jpg') no-repeat;
+
     min-height:110vh;
     background-size: cover;
     background-position: center;
